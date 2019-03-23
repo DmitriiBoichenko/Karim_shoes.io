@@ -14,7 +14,56 @@ function initSlickCarousel() {
 		rows: 0,
 		prevArrow: '<button class="slick-prev"></button>',
 		nextArrow: '<button class="slick-next"></button>',
-		autoplay: true
+		//autoplay: true,
+		responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToScroll: 1,
+				slidesToShow: 3
+			}
+		}, {
+			breakpoint: 768,
+			settings: {
+				slidesToScroll: 1,
+				slidesToShow: 2
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				slidesToScroll: 1,
+				slidesToShow: 1
+			}
+		}]
+	});
+
+	jQuery('.product-slider').slick({
+		slidesToScroll: 1,
+		rows: 0,
+		arrows: false,
+		asNavFor: '.product-slider-sm',
+		focusOnSelect: true
+	});
+
+	jQuery('.product-slider-sm').slick({
+		slidesToScroll: 1,
+		slidesToShow: 6,
+		rows: 0,
+		arrows: false,
+		asNavFor: '.product-slider',
+		focusOnSelect: true,
+		responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToScroll: 1,
+				slidesToShow: 5
+			}
+		}, {
+			breakpoint: 768,
+			settings: {
+				slidesToScroll: 1,
+				slidesToShow: 4
+			}
+		}]
 	});
 }
 
